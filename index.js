@@ -18,21 +18,18 @@ Array.prototype.last = function() {
 function Phrase(content) {
   this.content = content;
 
-  this.processedContent = function() {
-    return this.processor(this.content);
+  this.processContent = function() {
+    return this.letters().toLowerCase();
   } 
 
   // Returns true for a palindrome, false otherwise
   this.palindrome = function palindrome() {
-    return this.processedContent() === this.processedContent().reverse();
+    let processedContent = this.processContent();
+    return processedContent === processedContent.reverse();
   }
 
   this.louder = function () {
     return this.content.toUpperCase();
-  }
-
-  this.processor = function(string) {
-    return this.letters(string.toLowerCase());
   }
 
   this.letters = function(string = this.content) {
