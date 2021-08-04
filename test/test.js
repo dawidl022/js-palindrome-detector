@@ -21,7 +21,7 @@ describe("Phrase", function() {
     });
 
     it("should return true for a palindrome with punctuation", function() {
-      
+
       let punctuatedPalindrome = new Phrase("A man, a plan, a canal—Panama!");
       assert(punctuatedPalindrome.palindrome());
 
@@ -31,4 +31,16 @@ describe("Phrase", function() {
 
   });
 
+  describe("#letters", function() {
+
+    it("Should return only letters", function() {
+      let punctuatedPalindrome = new Phrase("Madam, I'm Adam.");
+      assert.strictEqual(punctuatedPalindrome.letters(), "MadamImAdam");
+
+      let anotherPunctuatedPalindrome = new Phrase("A man, a plan, a canal—Panama!");
+      assert.strictEqual(anotherPunctuatedPalindrome.letters(),
+                         "AmanaplanacanalPanama");
+    });
+
+  });
 });
