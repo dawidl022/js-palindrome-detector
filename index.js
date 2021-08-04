@@ -32,6 +32,6 @@ function Phrase(content) {
   }
 
   this.processor = function(string) {
-    return string.toLowerCase();
+    return string.toLowerCase().match(/[a-z]+/).join("");
   }
 }
