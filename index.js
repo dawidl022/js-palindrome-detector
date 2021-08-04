@@ -33,6 +33,6 @@ function Phrase(content) {
   }
 
   this.letters = function(string = this.content) {
-    return string.match(/[a-z]+/ig).join("");
+    return (string.match(/[a-z]+/ig) ?? []).join("");
   }
 }

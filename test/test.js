@@ -29,11 +29,16 @@ describe("Phrase", function() {
       assert(anotherPunctuatedPalindrome.palindrome())
     });
 
+    it("should return true for an empty string", function() {
+      let emptyPhrase = new Phrase("");
+      assert(emptyPhrase.palindrome());
+    })
+
   });
 
   describe("#letters", function() {
 
-    it("Should return only letters", function() {
+    it("should return only letters", function() {
       let punctuatedPalindrome = new Phrase("Madam, I'm Adam.");
       assert.strictEqual(punctuatedPalindrome.letters(), "MadamImAdam");
 
@@ -41,6 +46,11 @@ describe("Phrase", function() {
       assert.strictEqual(anotherPunctuatedPalindrome.letters(),
                          "AmanaplanacanalPanama");
     });
+
+    it("should return an empty string if there are no letters", function() {
+      let noLetters = new Phrase("!@ 0");
+      assert.strictEqual(noLetters.letters(), "");
+    })
 
   });
 });
